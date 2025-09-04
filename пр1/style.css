@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 80px;
+}
+
+h1 {
+    font-family: "Montserrat";
+    font-size: 58px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+section {
+    margin: 25px 80px;
+}
+
+.nav__list, .icons__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    gap: 40px;
+}
+
+.list__element {
+    list-style: none;
+    font-size: 15px;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.section__card {
+    background-color: #D2CFE4;
+    border-radius: 32px;
+    padding: 20px;
+}
+
+.card__content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.content__info {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0px;
+}
+
+.content__icon {
+    object-fit: none;
+}
+
+.content__image {
+    width: 731px;
+    height: 621px;
+    margin-top: -110px;
+}
+
+.info__header {
+    margin-right: -90px;
+}
+
+.info__text {
+    margin-right: -90px;
+    font-size: 17px;
+    font-family: "Open Sans";
+}
+
+.info__button {
+    width: 170px;
+    height: 50px;    
+    font-family: "Inter";
+    font-size: 19px;
+    font-weight: 400;
+    color: #FFFFFF;
+    border-radius: 200px;
+    background-color: #000000;
+    border: none;
+}
+
+
+
+
+

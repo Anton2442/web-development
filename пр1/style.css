@@ -13,8 +13,16 @@ h1 {
     margin: 0px;
 }
 
+h2 {
+    font-size: 45px;
+    font-family: "Montserrat";
+    font-weight: 600;
+    width: 75%;
+    margin-left: 10px;
+}
+
 section {
-    margin: 25px 80px;
+    margin: 45px 80px;
 }
 
 .nav__list, .icons__list {
@@ -29,6 +37,7 @@ section {
     font-size: 15px;
     font-family: "Montserrat";
     font-weight: 600;
+    color: #3E356A;
 }
 
 .section__card {
@@ -80,6 +89,66 @@ section {
     border-radius: 200px;
     background-color: #000000;
     border: none;
+}
+
+.card__nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 50px 20px;
+    height: 792px;
+}
+
+.grid__element {
+    border-radius: 32px;
+    background-color: #000000;
+}
+
+#grid__first {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/3;
+    grid-column: 1/3;
+}
+
+#grid__first img {
+    object-fit: none;
+    width: 80%;
+}
+
+#grid__second {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/4;
+    grid-column: 3;
+}
+
+#grid__third {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/4;
+    grid-column: 4;
+}
+
+#grid__fourth {
+    display: flex;
+    flex-direction: row;
+    grid-row: 3;
+    grid-column: 1/3;
+}
+
+.element__text {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
 }
 
 

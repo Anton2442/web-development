@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Readex+Pro:wght@160..700&display=swap');
+
 
 header {
     display: flex;
     justify-content: space-between;
-    margin: 25px 80px;
+    margin: 25px 5%;
 }
 
 h1 {
@@ -17,12 +18,12 @@ h2 {
     font-size: 45px;
     font-family: "Montserrat";
     font-weight: 600;
-    width: 75%;
+    width: 60%;
     margin-left: 10px;
 }
 
 section {
-    margin: 45px 80px;
+    margin: 45px 5%;
 }
 
 .nav__list, .icons__list {
@@ -44,6 +45,7 @@ section {
     background-color: #D2CFE4;
     border-radius: 32px;
     padding: 20px;
+    box-shadow: 5px 5px 16px 5px #D2CFE4;
 }
 
 .card__content {
@@ -67,6 +69,9 @@ section {
     width: 731px;
     height: 621px;
     margin-top: -110px;
+    margin-bottom: 10px;
+    width: 60%;
+    object-fit: none;
 }
 
 .info__header {
@@ -101,10 +106,10 @@ section {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 20.8vw);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 50px 20px;
-    height: 792px;
+    height: 104vh;
 }
 
 .grid__element {
@@ -120,29 +125,53 @@ section {
 }
 
 #grid__first img {
-    object-fit: none;
+    /* height: 377px;
+    width: 500px; */
     width: 80%;
+    margin-left: 50px;
+}
+
+#grid__first .text-category {
+    margin-top: 0px;
+}
+
+#grid__first .text-main {
+    width: 192px;
+    margin-left: auto;
 }
 
 #grid__second {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     grid-row: 1/4;
     grid-column: 3;
+}
+
+#grid__second img {
+    width: 93%;
+    margin-left: auto;
 }
 
 #grid__third {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     grid-row: 1/4;
     grid-column: 4;
 }
 
 #grid__fourth {
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
     grid-row: 3;
     grid-column: 1/3;
+    padding-left: 50px;
+}
+
+#grid__fourth img {
+    width: 65%;
 }
 
 .element__text {
@@ -151,7 +180,84 @@ section {
     color: #FFFFFF;
 }
 
+#grid__first .element__text, #grid__fourth .element__text {
+    text-align: right;
+    margin-right: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
 
+#grid__second .element__text, #grid__third .element__text {
+    text-align: center;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.text-category {
+    font-family: "Inter";
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
 
+.text-main {
+    font-family: "Readex Pro";
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 20px;
+    margin-bottom: 100px;
+}
+
+.products__product {
+    padding: 0px 5px;
+    width: 270px;
+    border-radius: 18px;
+    box-shadow: 3px 3px 12px 0px rgb(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products__product img {
+    width: 98%;
+}
+
+.product__info {
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.info__name {
+    font-family: "Readex Pro";
+    font-size: 22px;
+    font-weight: 400px;
+    color: #3E356A;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.info__description {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400px;
+    color: #4B4B4B;
+}
+
+.info__price {
+    margin-top: 0px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 400px;
+    color: #3E356A;
+}
 

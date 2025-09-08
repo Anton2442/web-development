@@ -75,7 +75,7 @@ section {
 }
 
 .info__header {
-    margin-right: -90px;
+    margin-right: -190px;
 }
 
 .info__text {
@@ -109,7 +109,7 @@ section {
     grid-template-columns: repeat(4, 20.8vw);
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 50px 20px;
-    height: 104vh;
+    height: 105vh;
 }
 
 .grid__element {

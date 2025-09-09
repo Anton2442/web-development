@@ -291,4 +291,78 @@ console.log(arr.map(el => el += 10));
 arr = [1,-2,3,-4,5];
 console.log(arr.find(el => el<0));
 
+// Объекты
+// 1
+let student1 = {
+    name: "Антон",
+    age: 19
+};
+console.log(student1.name);
+console.log(student1.age);
 
+// 2
+student1 = {
+    name: "Антон",
+    age: 19
+};
+student1.city = "Батайск";
+console.log(student1.city);
+
+// 3
+student1 = {
+    name: "Антон",
+    age: 19
+};
+delete student1.age;
+console.log(student1.age);
+
+// 4
+student1 = {
+    name: "Антон",
+    age: 19
+};
+student1.name = "Рома";
+console.log(student1.name);
+
+// 5
+student1 = {
+    name: "Антон",
+    age: 19
+};
+function checkProperty(obj, prop) {
+    return obj.hasOwnProperty(prop);
+}
+console.log(checkProperty(student1, "age")?"есть такое свойство":"нет такого свойства");
+
+// 6
+student1 = {
+    name: "Антон",
+    age: 19
+};
+function getProperty(obj, prop) {
+    return obj[prop];
+}
+console.log(getProperty(student1, "name"));
+
+// 7
+student1 = {
+    name: "Антон",
+    age: 19
+};
+student2 = {
+    name: "Рома",
+    age: 40
+};
+function compareStudents(obj1, obj2) {
+    return obj1.age>obj2.age?`${obj1.name} старше`:`${obj2.name} старше`;
+}
+console.log(compareStudents(student1, student2));
+
+// 8
+student1 = {
+    name: "Антон",
+    age: 19
+};
+for (prop in student1) {
+    console.log(prop);
+}

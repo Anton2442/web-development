@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практическая 2</title>
-    <script src="tasks.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Практическая 2 - Все задания</title>
+    <script src="tasks.js" defer></script>
     <style>
         body {
             font-family: sans-serif;
@@ -14,36 +14,512 @@
             border: 1px solid #ccc;
             padding: 10px;
         }
-        input[type="number"] {
+        input[type="number"], input[type="text"] {
             width: 50px;
+        }
+        .result-multi-line {
+            white-space: pre-wrap;
+            font-family: monospace;
+            padding: 5px;
+            border: 1px solid #ddd;
+            max-height: 150px;
+            overflow-y: auto;
         }
     </style>
 </head>
 <body>
 
-    <div class="task">
-        <h2>Разогревочные задачи - 1</h2>
-        <label for="task1_a">a:</label>
-        <input type="number" id="task1_a" value="2">
-        <label for="task1_b">b:</label>
-        <input type="number" id="task1_b" value="5">
-        <button onclick="task1()">Выполнить</button>
-        <div>Результат: <span id="task1_result"></span></div>
-    </div>
+<!-- Разогревочные задачи -->
+<h1>Разогревочные задачи</h1>
 
-    <div class="task">
-        <h2>Разогревочные задачи - 2</h2>
-        <label for="warmup2_a">a:</label>
-        <input type="number" id="warmup2_a" value="4">
-        <button onclick="solveWarmup2()">Выполнить</button>
-        <div>Результат: <span id="warmup2_result"></span></div>
-    </div>
+<div class="task">
+    <h2>Задача 1</h2>
+    <label for="task1_a">a:</label>
+    <input type="number" id="task1_a" value="2"/>
+    <label for="task1_b">b:</label>
+    <input type="number" id="task1_b" value="5"/>
+    <button onclick="task1()">Выполнить</button>
+    <div>Результат: <span id="task1_result"></span></div>
+</div>
 
-    <!-- Добавьте аналогичные блоки для остальных задач -->
+<div class="task">
+    <h2>Задача 2</h2>
+    <label for="task2_a">a:</label>
+    <input type="number" id="task2_a" value="4"/>
+    <button onclick="task2()">Выполнить</button>
+    <div>Результат: <span id="task2_result"></span></div>
+</div>
 
-    <script>
-        // JavaScript-код будет здесь
-    </script>
+<div class="task">
+    <h2>Задача 3</h2>
+    <label for="task3_a">a:</label>
+    <input type="number" id="task3_a" value="36"/>
+    <button onclick="task3()">Выполнить</button>
+    <div>Результат: <span id="task3_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 4</h2>
+    <label for="task4_a">a:</label>
+    <input type="number" id="task4_a" value="12"/>
+    <label for="task4_b">b:</label>
+    <input type="number" id="task4_b" value="10"/>
+    <button onclick="task4()">Выполнить</button>
+    <div>Результат: <span id="task4_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 5</h2>
+    <label for="task5_a">a:</label>
+    <input type="number" id="task5_a" value="2"/>
+    <label for="task5_b">b:</label>
+    <input type="number" id="task5_b" value="5"/>
+    <button onclick="task5()">Выполнить</button>
+    <div>Результат: <span id="task5_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 6</h2>
+    <label for="task6_a">a:</label>
+    <input type="number" id="task6_a" value="7"/>
+    <button onclick="task6()">Выполнить</button>
+    <div>Результат: <span id="task6_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 7</h2>
+    <label for="task7_a">a:</label>
+    <input type="number" id="task7_a" value="5"/>
+    <button onclick="task7()">Выполнить</button>
+    <div>Результат: <span id="task7_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 8</h2>
+    <label for="task8_a">a:</label>
+    <input type="number" id="task8_a" value="3"/>
+    <label for="task8_b">b:</label>
+    <input type="number" id="task8_b" value="7"/>
+    <button onclick="task8()">Выполнить</button>
+    <div>Результат: <span id="task8_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 9</h2>
+    <label for="task9_a">Год рождения (a):</label>
+    <input type="number" id="task9_a" value="2006"/>
+    <button onclick="task9()">Выполнить</button>
+    <div>Результат: <span id="task9_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 10</h2>
+    <label for="task10_a">a:</label>
+    <input type="number" id="task10_a" value="5"/>
+    <label for="task10_b">b:</label>
+    <input type="number" id="task10_b" value="10"/>
+    <button onclick="task10()">Выполнить</button>
+    <div>Результат: <span id="task10_result"></span></div>
+</div>
+
+<!-- Циклы -->
+<h1>Циклы</h1>
+
+<div class="task">
+    <h2>Задача 1</h2>
+    <button onclick="loop1()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="loop1_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 2</h2>
+    <label for="loop2_n">n:</label>
+    <input type="number" id="loop2_n" value="5"/>
+    <button onclick="loop2()">Выполнить</button>
+    <div>Результат: <span id="loop2_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 3</h2>
+    <label for="loop3_n">n:</label>
+    <input type="number" id="loop3_n" value="5"/>
+    <button onclick="loop3()">Выполнить</button>
+    <div>Результат: <span id="loop3_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 4</h2>
+    <button onclick="loop4()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="loop4_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 5</h2>
+    <button onclick="loop5()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="loop5_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 6</h2>
+    <button onclick="loop6()">Выполнить</button>
+    <div>Результат: <span id="loop6_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 7</h2>
+    <button onclick="loop7()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="loop7_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 8</h2>
+    <label for="loop8_n">n:</label>
+    <input type="number" id="loop8_n" value="5"/>
+    <button onclick="loop8()">Выполнить</button>
+    <div>Результат: <span id="loop8_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 9</h2>
+    <button onclick="loop9()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="loop9_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 10</h2>
+    <label for="loop10_char">char:</label>
+    <input type="text" id="loop10_char" value="f" maxlength="1"/>
+    <label for="loop10_n">n:</label>
+    <input type="number" id="loop10_n" value="5"/>
+    <button onclick="loop10()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="loop10_result"></pre></div>
+</div>
+
+<!-- Условия -->
+<h1>Условия</h1>
+
+<div class="task">
+    <h2>Задача 1</h2>
+    <label for="cond1_a">a:</label>
+    <input type="number" id="cond1_a" value="5"/>
+    <button onclick="cond1()">Выполнить</button>
+    <div>Результат: <span id="cond1_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 2</h2>
+    <label for="cond2_scores">Оценки:</label>
+    <input type="number" id="cond2_scores" value="92"/>
+    <button onclick="cond2()">Выполнить</button>
+    <div>Результат: <span id="cond2_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 3</h2>
+    <label for="cond3_a">a:</label>
+    <input type="number" id="cond3_a" value="6"/>
+    <button onclick="cond3()">Выполнить</button>
+    <div>Результат: <span id="cond3_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 4</h2>
+    <label for="cond4_a">a:</label>
+    <input type="number" id="cond4_a" value="4"/>
+    <button onclick="cond4()">Выполнить</button>
+    <div>Результат: <span id="cond4_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 5</h2>
+    <label for="cond5_a">a:</label>
+    <input type="number" id="cond5_a" value="3"/>
+    <label for="cond5_b">b:</label>
+    <input type="number" id="cond5_b" value="4"/>
+    <button onclick="cond5()">Выполнить</button>
+    <div>Результат: <span id="cond5_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 6</h2>
+    <label for="cond6_a">Год (a):</label>
+    <input type="number" id="cond6_a" value="2025"/>
+    <button onclick="cond6()">Выполнить</button>
+    <div>Результат: <span id="cond6_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 7</h2>
+    <label for="cond7_t">t:</label>
+    <input type="number" id="cond7_t" value="12"/>
+    <button onclick="cond7()">Выполнить</button>
+    <div>Результат: <span id="cond7_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 8</h2>
+    <label for="cond8_a">a:</label>
+    <input type="number" id="cond8_a" value="55"/>
+    <button onclick="cond8()">Выполнить</button>
+    <div>Результат: <span id="cond8_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 9</h2>
+    <label for="cond9_a">a:</label>
+    <input type="number" id="cond9_a" value="5"/>
+    <label for="cond9_b">b:</label>
+    <input type="number" id="cond9_b" value="7"/>
+    <button onclick="cond9()">Выполнить</button>
+    <div>Результат: <span id="cond9_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 10</h2>
+    <label for="cond10_char">char:</label>
+    <input type="text" id="cond10_char" value="|" maxlength="1"/>
+    <button onclick="cond10()">Выполнить</button>
+    <div>Результат: <span id="cond10_result"></span></div>
+</div>
+
+<!-- Функции -->
+<h1>Функции</h1>
+
+<div class="task">
+    <h2>Задача 1</h2>
+    <label for="func1_a">a:</label>
+    <input type="number" id="func1_a" value="3"/>
+    <label for="func1_b">b:</label>
+    <input type="number" id="func1_b" value="4"/>
+    <button onclick="func1()">Выполнить</button>
+    <div>Результат: <span id="func1_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 2</h2>
+    <label for="func2_a">a:</label>
+    <input type="number" id="func2_a" value="3"/>
+    <label for="func2_b">b:</label>
+    <input type="number" id="func2_b" value="4"/>
+    <button onclick="func2()">Выполнить</button>
+    <div>Результат: <span id="func2_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 3</h2>
+    <label for="func3_a">a:</label>
+    <input type="number" id="func3_a" value="8"/>
+    <button onclick="func3()">Выполнить</button>
+    <div>Результат: <span id="func3_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 4</h2>
+    <label for="func4_n">n:</label>
+    <input type="number" id="func4_n" value="5"/>
+    <button onclick="func4()">Выполнить</button>
+    <div>Результат: <span id="func4_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 5</h2>
+    <label for="func5_a">a:</label>
+    <input type="number" id="func5_a" value="6"/>
+    <button onclick="func5()">Выполнить</button>
+    <div>Результат: <span id="func5_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 6</h2>
+    <label for="func6_a">a:</label>
+    <input type="number" id="func6_a" value="36"/>
+    <button onclick="func6()">Выполнить</button>
+    <div>Результат: <span id="func6_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 7</h2>
+    <label for="func7_a">a:</label>
+    <input type="number" id="func7_a" value="2"/>
+    <label for="func7_b">b:</label>
+    <input type="number" id="func7_b" value="4"/>
+    <button onclick="func7()">Выполнить</button>
+    <div>Результат: <span id="func7_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 8</h2>
+    <label for="func8_a">a:</label>
+    <input type="number" id="func8_a" value="5"/>
+    <label for="func8_b">b:</label>
+    <input type="number" id="func8_b" value="7"/>
+    <button onclick="func8()">Выполнить</button>
+    <div>Результат: <span id="func8_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 9</h2>
+    <label for="func9_a">a:</label>
+    <input type="number" id="func9_a" value="5"/>
+    <label for="func9_b">b:</label>
+    <input type="number" id="func9_b" value="7"/>
+    <button onclick="func9()">Выполнить</button>
+    <div>Результат: <span id="func9_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 10</h2>
+    <label for="func10_a">Возраст (a):</label>
+    <input type="number" id="func10_a" value="20" />
+    <button onclick="func10()">Выполнить</button>
+    <div>Результат: <span id="func10_result"></span></div>
+</div>
+
+<!-- Массивы -->
+<h1>Массивы</h1>
+
+<div class="task">
+    <h2>Задача 1</h2>
+    <button onclick="arr1()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="arr1_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 2</h2>
+    <button onclick="arr2()">Выполнить</button>
+    <div>Результат: <span id="arr2_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 3</h2>
+    <button onclick="arr3()">Выполнить</button>
+    <div>Результат: <span id="arr3_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 4</h2>
+    <button onclick="arr4()">Выполнить</button>
+    <div>Результат: <span id="arr4_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 5</h2>
+    <button onclick="arr5()">Выполнить</button>
+    <div>Результат: <span id="arr5_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 6</h2>
+    <button onclick="arr6()">Выполнить</button>
+    <div>Результат: <span id="arr6_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 7</h2>
+    <button onclick="arr7()">Выполнить</button>
+    <div>Результат: <span id="arr7_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 8</h2>
+    <button onclick="arr8()">Выполнить</button>
+    <div>Результат: <span id="arr8_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 9</h2>
+    <button onclick="arr9()">Выполнить</button>
+    <div>Результат: <span id="arr9_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 10</h2>
+    <button onclick="arr10()">Выполнить</button>
+    <div>Результат: <span id="arr10_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 11</h2>
+    <button onclick="arr11()">Выполнить</button>
+    <div>Результат: <span id="arr11_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 12</h2>
+    <label for="arr12_str">Строка:</label>
+    <input type="text" id="arr12_str" value="12345"/>
+    <button onclick="arr12()">Выполнить</button>
+    <div>Результат: <span id="arr12_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 13</h2>
+    <button onclick="arr13()">Выполнить</button>
+    <div>Результат: <span id="arr13_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 14</h2>
+    <button onclick="arr14()">Выполнить</button>
+    <div>Результат: <span id="arr14_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 15</h2>
+    <button onclick="arr15()">Выполнить</button>
+    <div>Результат: <span id="arr15_result"></span></div>
+</div>
+
+<!-- Объекты -->
+<h1>Объекты</h1>
+
+<div class="task">
+    <h2>Задача 1</h2>
+    <button onclick="obj1()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="obj1_result"></pre></div>
+</div>
+
+<div class="task">
+    <h2>Задача 2</h2>
+    <button onclick="obj2()">Выполнить</button>
+    <div>Результат: <span id="obj2_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 3</h2>
+    <button onclick="obj3()">Выполнить</button>
+    <div>Результат: <span id="obj3_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 4</h2>
+    <button onclick="obj4()">Выполнить</button>
+    <div>Результат: <span id="obj4_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 5</h2>
+    <button onclick="obj5()">Выполнить</button>
+    <div>Результат: <span id="obj5_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 6</h2>
+    <button onclick="obj6()">Выполнить</button>
+    <div>Результат: <span id="obj6_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 7</h2>
+    <button onclick="obj7()">Выполнить</button>
+    <div>Результат: <span id="obj7_result"></span></div>
+</div>
+
+<div class="task">
+    <h2>Задача 8</h2>
+    <button onclick="obj8()">Выполнить</button>
+    <div>Результат: <pre class="result-multi-line" id="obj8_result"></pre></div>
+</div>
 
 </body>
 </html>

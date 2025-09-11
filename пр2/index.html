@@ -34,6 +34,7 @@
 
 <div class="task">
     <h2>Задача 1</h2>
+    <div class="desc">Площадь прямоугольника: программа принимает длину и ширину и выводит площадь.</div>
     <label for="task1_a">a:</label>
     <input type="number" id="task1_a" value="2"/>
     <label for="task1_b">b:</label>
@@ -44,6 +45,7 @@
 
 <div class="task">
     <h2>Задача 2</h2>
+    <div class="desc">Периметр квадрата: принимает длину стороны квадрата и выводит его периметр.</div>
     <label for="task2_a">a:</label>
     <input type="number" id="task2_a" value="4"/>
     <button onclick="task2()">Выполнить</button>
@@ -52,6 +54,7 @@
 
 <div class="task">
     <h2>Задача 3</h2>
+    <div class="desc">Температура по Фаренгейту: преобразует из °C в °F по формуле (C × 9/5) + 32.</div>
     <label for="task3_a">a:</label>
     <input type="number" id="task3_a" value="36"/>
     <button onclick="task3()">Выполнить</button>
@@ -60,6 +63,7 @@
 
 <div class="task">
     <h2>Задача 4</h2>
+    <div class="desc">Остаток от деления: принимает два числа и выводит остаток от их деления.</div>
     <label for="task4_a">a:</label>
     <input type="number" id="task4_a" value="12"/>
     <label for="task4_b">b:</label>
@@ -70,6 +74,7 @@
 
 <div class="task">
     <h2>Задача 5</h2>
+    <div class="desc">Умножение двух чисел: принимает два числа и выводит их произведение.</div>
     <label for="task5_a">a:</label>
     <input type="number" id="task5_a" value="2"/>
     <label for="task5_b">b:</label>
@@ -80,6 +85,7 @@
 
 <div class="task">
     <h2>Задача 6</h2>
+    <div class="desc">Проверка на чётность: принимает число и выводит, чётное оно или нет.</div>
     <label for="task6_a">a:</label>
     <input type="number" id="task6_a" value="7"/>
     <button onclick="task6()">Выполнить</button>
@@ -88,6 +94,7 @@
 
 <div class="task">
     <h2>Задача 7</h2>
+    <div class="desc">Перевод времени: принимает количество часов и преобразует их в минуты.</div>
     <label for="task7_a">a:</label>
     <input type="number" id="task7_a" value="5"/>
     <button onclick="task7()">Выполнить</button>
@@ -96,6 +103,7 @@
 
 <div class="task">
     <h2>Задача 8</h2>
+    <div class="desc">Сравнение двух чисел: принимает два числа и выводит, какое больше, или что они равны.</div>
     <label for="task8_a">a:</label>
     <input type="number" id="task8_a" value="3"/>
     <label for="task8_b">b:</label>
@@ -106,6 +114,7 @@
 
 <div class="task">
     <h2>Задача 9</h2>
+    <div class="desc">Возраст пользователя: принимает год рождения и выводит возраст.</div>
     <label for="task9_a">Год рождения (a):</label>
     <input type="number" id="task9_a" value="2006"/>
     <button onclick="task9()">Выполнить</button>
@@ -114,6 +123,7 @@
 
 <div class="task">
     <h2>Задача 10</h2>
+    <div class="desc">Простое сложение: принимает два числа и выводит их сумму.</div>
     <label for="task10_a">a:</label>
     <input type="number" id="task10_a" value="5"/>
     <label for="task10_b">b:</label>
@@ -127,12 +137,16 @@
 
 <div class="task">
     <h2>Задача 1</h2>
+    <div class="desc">Вывести числа от 1 до 10: используя цикл, вывести числа от 1 до n.</div>
+    <label for="loop1_n">До n:</label>
+    <input type="number" id="loop1_n" value="10"/>
     <button onclick="loop1()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="loop1_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 2</h2>
+    <div class="desc">Сумма чисел от 1 до N.</div>
     <label for="loop2_n">n:</label>
     <input type="number" id="loop2_n" value="5"/>
     <button onclick="loop2()">Выполнить</button>
@@ -141,6 +155,7 @@
 
 <div class="task">
     <h2>Задача 3</h2>
+    <div class="desc">Факториал числа N.</div>
     <label for="loop3_n">n:</label>
     <input type="number" id="loop3_n" value="5"/>
     <button onclick="loop3()">Выполнить</button>
@@ -149,30 +164,47 @@
 
 <div class="task">
     <h2>Задача 4</h2>
+    <div class="desc">Вывод чётных чисел от 1 до n.</div>
+    <label for="loop4_n">До n:</label>
+    <input type="number" id="loop4_n" value="20"/>
     <button onclick="loop4()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="loop4_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 5</h2>
+    <div class="desc">Таблица умножения на заданное число до указанного множителя.</div>
+    <label for="loop5_base">Основание:</label>
+    <input type="number" id="loop5_base" value="5"/>
+    <label for="loop5_to">До:</label>
+    <input type="number" id="loop5_to" value="10"/>
     <button onclick="loop5()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="loop5_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 6</h2>
+    <div class="desc">Сумма чисел от 1 до n, кратных d.</div>
+    <label for="loop6_n">До n:</label>
+    <input type="number" id="loop6_n" value="50"/>
+    <label for="loop6_d">Кратно d:</label>
+    <input type="number" id="loop6_d" value="3"/>
     <button onclick="loop6()">Выполнить</button>
     <div>Результат: <span id="loop6_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 7</h2>
+    <div class="desc">Обратный отсчёт от заданного числа до 1.</div>
+    <label for="loop7_start">Старт с:</label>
+    <input type="number" id="loop7_start" value="10"/>
     <button onclick="loop7()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="loop7_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 8</h2>
+    <div class="desc">Произведение чисел от 1 до N.</div>
     <label for="loop8_n">n:</label>
     <input type="number" id="loop8_n" value="5"/>
     <button onclick="loop8()">Выполнить</button>
@@ -181,12 +213,18 @@
 
 <div class="task">
     <h2>Задача 9</h2>
+    <div class="desc">Числа, кратные d, от 1 до n.</div>
+    <label for="loop9_n">До n:</label>
+    <input type="number" id="loop9_n" value="100"/>
+    <label for="loop9_d">Кратно d:</label>
+    <input type="number" id="loop9_d" value="7"/>
     <button onclick="loop9()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="loop9_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 10</h2>
+    <div class="desc">Печать символов: принимает символ и количество N, выводит символ N раз.</div>
     <label for="loop10_char">char:</label>
     <input type="text" id="loop10_char" value="f" maxlength="1"/>
     <label for="loop10_n">n:</label>
@@ -200,6 +238,7 @@
 
 <div class="task">
     <h2>Задача 1</h2>
+    <div class="desc">Проверка числа на положительность: выводит «положительное» или «отрицательное».</div>
     <label for="cond1_a">a:</label>
     <input type="number" id="cond1_a" value="5"/>
     <button onclick="cond1()">Выполнить</button>
@@ -208,6 +247,7 @@
 
 <div class="task">
     <h2>Задача 2</h2>
+    <div class="desc">Оценка по баллам (0–100): >90 — «отлично», >70 — «хорошо», >60 — «удовлетворительно», иначе «неудовлетворительно».</div>
     <label for="cond2_scores">Оценки:</label>
     <input type="number" id="cond2_scores" value="92"/>
     <button onclick="cond2()">Выполнить</button>
@@ -216,6 +256,7 @@
 
 <div class="task">
     <h2>Задача 3</h2>
+    <div class="desc">Проверка деления на 3.</div>
     <label for="cond3_a">a:</label>
     <input type="number" id="cond3_a" value="6"/>
     <button onclick="cond3()">Выполнить</button>
@@ -224,6 +265,7 @@
 
 <div class="task">
     <h2>Задача 4</h2>
+    <div class="desc">Чётное или нечётное.</div>
     <label for="cond4_a">a:</label>
     <input type="number" id="cond4_a" value="4"/>
     <button onclick="cond4()">Выполнить</button>
@@ -232,6 +274,7 @@
 
 <div class="task">
     <h2>Задача 5</h2>
+    <div class="desc">Наибольшее из двух чисел.</div>
     <label for="cond5_a">a:</label>
     <input type="number" id="cond5_a" value="3"/>
     <label for="cond5_b">b:</label>
@@ -242,6 +285,7 @@
 
 <div class="task">
     <h2>Задача 6</h2>
+    <div class="desc">Проверка високосного года.</div>
     <label for="cond6_a">Год (a):</label>
     <input type="number" id="cond6_a" value="2025"/>
     <button onclick="cond6()">Выполнить</button>
@@ -250,6 +294,7 @@
 
 <div class="task">
     <h2>Задача 7</h2>
+    <div class="desc">Проверка температуры: нужно ли надеть куртку (например, если ниже 10°C).</div>
     <label for="cond7_t">t:</label>
     <input type="number" id="cond7_t" value="12"/>
     <button onclick="cond7()">Выполнить</button>
@@ -258,6 +303,7 @@
 
 <div class="task">
     <h2>Задача 8</h2>
+    <div class="desc">Число делится на 5 и 11 одновременно.</div>
     <label for="cond8_a">a:</label>
     <input type="number" id="cond8_a" value="55"/>
     <button onclick="cond8()">Выполнить</button>
@@ -266,6 +312,7 @@
 
 <div class="task">
     <h2>Задача 9</h2>
+    <div class="desc">Равны ли числа.</div>
     <label for="cond9_a">a:</label>
     <input type="number" id="cond9_a" value="5"/>
     <label for="cond9_b">b:</label>
@@ -276,6 +323,7 @@
 
 <div class="task">
     <h2>Задача 10</h2>
+    <div class="desc">Проверка символа: является ли он буквой (a-z или A-Z).</div>
     <label for="cond10_char">char:</label>
     <input type="text" id="cond10_char" value="|" maxlength="1"/>
     <button onclick="cond10()">Выполнить</button>
@@ -287,6 +335,7 @@
 
 <div class="task">
     <h2>Задача 1</h2>
+    <div class="desc">Сложение двух чисел (функция).</div>
     <label for="func1_a">a:</label>
     <input type="number" id="func1_a" value="3"/>
     <label for="func1_b">b:</label>
@@ -297,6 +346,7 @@
 
 <div class="task">
     <h2>Задача 2</h2>
+    <div class="desc">Умножение двух чисел (функция).</div>
     <label for="func2_a">a:</label>
     <input type="number" id="func2_a" value="3"/>
     <label for="func2_b">b:</label>
@@ -307,6 +357,7 @@
 
 <div class="task">
     <h2>Задача 3</h2>
+    <div class="desc">Проверка чётности числа (функция).</div>
     <label for="func3_a">a:</label>
     <input type="number" id="func3_a" value="8"/>
     <button onclick="func3()">Выполнить</button>
@@ -315,6 +366,7 @@
 
 <div class="task">
     <h2>Задача 4</h2>
+    <div class="desc">Факториал числа (функция).</div>
     <label for="func4_n">n:</label>
     <input type="number" id="func4_n" value="5"/>
     <button onclick="func4()">Выполнить</button>
@@ -323,6 +375,7 @@
 
 <div class="task">
     <h2>Задача 5</h2>
+    <div class="desc">Проверка деления на 3 (функция).</div>
     <label for="func5_a">a:</label>
     <input type="number" id="func5_a" value="6"/>
     <button onclick="func5()">Выполнить</button>
@@ -331,6 +384,7 @@
 
 <div class="task">
     <h2>Задача 6</h2>
+    <div class="desc">Перевод °C в °F (функция).</div>
     <label for="func6_a">a:</label>
     <input type="number" id="func6_a" value="36"/>
     <button onclick="func6()">Выполнить</button>
@@ -339,6 +393,7 @@
 
 <div class="task">
     <h2>Задача 7</h2>
+    <div class="desc">Возведение в степень (функция): число и степень.</div>
     <label for="func7_a">a:</label>
     <input type="number" id="func7_a" value="2"/>
     <label for="func7_b">b:</label>
@@ -349,6 +404,7 @@
 
 <div class="task">
     <h2>Задача 8</h2>
+    <div class="desc">Максимум из двух чисел (функция).</div>
     <label for="func8_a">a:</label>
     <input type="number" id="func8_a" value="5"/>
     <label for="func8_b">b:</label>
@@ -359,6 +415,7 @@
 
 <div class="task">
     <h2>Задача 9</h2>
+    <div class="desc">Минимум из двух чисел (функция).</div>
     <label for="func9_a">a:</label>
     <input type="number" id="func9_a" value="5"/>
     <label for="func9_b">b:</label>
@@ -369,6 +426,7 @@
 
 <div class="task">
     <h2>Задача 10</h2>
+    <div class="desc">Проверка возраста (функция): «Совершеннолетний» или «Несовершеннолетний».</div>
     <label for="func10_a">Возраст (a):</label>
     <input type="number" id="func10_a" value="20" />
     <button onclick="func10()">Выполнить</button>
@@ -380,72 +438,118 @@
 
 <div class="task">
     <h2>Задача 1</h2>
+    <div class="desc">Вывести каждый элемент массива (forEach).</div>
+    <label for="arr1_values">Массив (через пробел/запятую):</label>
+    <input type="text" id="arr1_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr1()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="arr1_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 2</h2>
+    <div class="desc">Найти первый чётный элемент массива (find).</div>
+    <label for="arr2_values">Массив:</label>
+    <input type="text" id="arr2_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr2()">Выполнить</button>
     <div>Результат: <span id="arr2_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 3</h2>
+    <div class="desc">Добавить элемент в конец (push).</div>
+    <label for="arr3_values">Массив:</label>
+    <input type="text" id="arr3_values" value="1 2 3 4 5" style="width:220px"/>
+    <label for="arr3_push_val">Добавить:</label>
+    <input type="number" id="arr3_push_val" value="6"/>
     <button onclick="arr3()">Выполнить</button>
     <div>Результат: <span id="arr3_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 4</h2>
+    <div class="desc">Добавить элемент в начало (unshift).</div>
+    <label for="arr4_values">Массив:</label>
+    <input type="text" id="arr4_values" value="1 2 3 4 5" style="width:220px"/>
+    <label for="arr4_unshift_val">Вставить в начало:</label>
+    <input type="number" id="arr4_unshift_val" value="0"/>
     <button onclick="arr4()">Выполнить</button>
     <div>Результат: <span id="arr4_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 5</h2>
+    <div class="desc">Удвоить значения всех элементов (map).</div>
+    <label for="arr5_values">Массив:</label>
+    <input type="text" id="arr5_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr5()">Выполнить</button>
     <div>Результат: <span id="arr5_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 6</h2>
+    <div class="desc">Удалить последний элемент (pop).</div>
+    <label for="arr6_values">Массив:</label>
+    <input type="text" id="arr6_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr6()">Выполнить</button>
     <div>Результат: <span id="arr6_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 7</h2>
+    <div class="desc">Удалить первый элемент (shift).</div>
+    <label for="arr7_values">Массив:</label>
+    <input type="text" id="arr7_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr7()">Выполнить</button>
     <div>Результат: <span id="arr7_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 8</h2>
+    <div class="desc">Объединить два массива (concat).</div>
+    <label for="arr8_values1">Массив 1:</label>
+    <input type="text" id="arr8_values1" value="1 2 3 4 5" style="width:220px"/>
+    <label for="arr8_values2">Массив 2:</label>
+    <input type="text" id="arr8_values2" value="6 7 8 9 10" style="width:220px"/>
     <button onclick="arr8()">Выполнить</button>
     <div>Результат: <span id="arr8_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 9</h2>
+    <div class="desc">Удалить элементы начиная с индекса (splice).</div>
+    <label for="arr9_values">Массив:</label>
+    <input type="text" id="arr9_values" value="1 2 3 4 5" style="width:220px"/>
+    <label for="arr9_start">Начать удаление с индекса:</label>
+    <input type="number" id="arr9_start" value="2"/>
     <button onclick="arr9()">Выполнить</button>
     <div>Результат: <span id="arr9_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 10</h2>
+    <div class="desc">Извлечь подмассив (slice).</div>
+    <label for="arr10_values">Массив:</label>
+    <input type="text" id="arr10_values" value="1 2 3 4 5" style="width:220px"/>
+    <label for="arr10_start">Начало среза:</label>
+    <input type="number" id="arr10_start" value="2"/>
+    <label for="arr10_end">Конец среза (не включительно):</label>
+    <input type="number" id="arr10_end" value="4"/>
     <button onclick="arr10()">Выполнить</button>
     <div>Результат: <span id="arr10_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 11</h2>
+    <div class="desc">Преобразовать массив в строку (join/конкатенация).</div>
+    <label for="arr11_values">Массив:</label>
+    <input type="text" id="arr11_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr11()">Выполнить</button>
     <div>Результат: <span id="arr11_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 12</h2>
+    <div class="desc">Преобразовать строку в массив (split).</div>
     <label for="arr12_str">Строка:</label>
     <input type="text" id="arr12_str" value="12345"/>
     <button onclick="arr12()">Выполнить</button>
@@ -454,18 +558,27 @@
 
 <div class="task">
     <h2>Задача 13</h2>
+    <div class="desc">Сумма всех чисел в массиве (forEach).</div>
+    <label for="arr13_values">Массив:</label>
+    <input type="text" id="arr13_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr13()">Выполнить</button>
     <div>Результат: <span id="arr13_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 14</h2>
+    <div class="desc">Увеличить каждое число на 10 (map).</div>
+    <label for="arr14_values">Массив:</label>
+    <input type="text" id="arr14_values" value="1 2 3 4 5" style="width:220px"/>
     <button onclick="arr14()">Выполнить</button>
     <div>Результат: <span id="arr14_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 15</h2>
+    <div class="desc">Найти первый отрицательный элемент (find).</div>
+    <label for="arr15_values">Массив:</label>
+    <input type="text" id="arr15_values" value="1 -2 3 -4 5" style="width:220px"/>
     <button onclick="arr15()">Выполнить</button>
     <div>Результат: <span id="arr15_result"></span></div>
 </div>
@@ -475,48 +588,100 @@
 
 <div class="task">
     <h2>Задача 1</h2>
+    <div class="desc">Создать объект с именем и возрастом и вывести их значения.</div>
+    <label for="obj1_name">Имя:</label>
+    <input type="text" id="obj1_name" value="Антон" style="width:120px"/>
+    <label for="obj1_age">Возраст:</label>
+    <input type="number" id="obj1_age" value="19"/>
     <button onclick="obj1()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="obj1_result"></pre></div>
 </div>
 
 <div class="task">
     <h2>Задача 2</h2>
+    <div class="desc">Добавить новое свойство city в объект.</div>
+    <label for="obj2_name">Имя:</label>
+    <input type="text" id="obj2_name" value="Антон" style="width:120px"/>
+    <label for="obj2_age">Возраст:</label>
+    <input type="number" id="obj2_age" value="19"/>
+    <label for="obj2_city">Город:</label>
+    <input type="text" id="obj2_city" value="Батайск" style="width:120px"/>
     <button onclick="obj2()">Выполнить</button>
     <div>Результат: <span id="obj2_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 3</h2>
+    <div class="desc">Удалить свойство age из объекта.</div>
+    <label for="obj3_name">Имя:</label>
+    <input type="text" id="obj3_name" value="Антон" style="width:120px"/>
+    <label for="obj3_age">Возраст:</label>
+    <input type="number" id="obj3_age" value="19"/>
     <button onclick="obj3()">Выполнить</button>
     <div>Результат: <span id="obj3_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 4</h2>
+    <div class="desc">Изменить значение свойства name.</div>
+    <label for="obj4_name">Текущее имя:</label>
+    <input type="text" id="obj4_name" value="Антон" style="width:120px"/>
+    <label for="obj4_age">Возраст:</label>
+    <input type="number" id="obj4_age" value="19"/>
+    <label for="obj4_new_name">Новое имя:</label>
+    <input type="text" id="obj4_new_name" value="Рома" style="width:120px"/>
     <button onclick="obj4()">Выполнить</button>
     <div>Результат: <span id="obj4_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 5</h2>
+    <div class="desc">Проверка наличия свойства в объекте.</div>
+    <label for="obj5_name">Имя:</label>
+    <input type="text" id="obj5_name" value="Антон" style="width:120px"/>
+    <label for="obj5_age">Возраст:</label>
+    <input type="number" id="obj5_age" value="19"/>
+    <label for="obj5_prop">Проверить свойство:</label>
+    <input type="text" id="obj5_prop" value="age" style="width:120px"/>
     <button onclick="obj5()">Выполнить</button>
     <div>Результат: <span id="obj5_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 6</h2>
+    <div class="desc">Проверка значения свойства: получить значение по имени свойства.</div>
+    <label for="obj6_name">Имя:</label>
+    <input type="text" id="obj6_name" value="Антон" style="width:120px"/>
+    <label for="obj6_age">Возраст:</label>
+    <input type="number" id="obj6_age" value="19"/>
+    <label for="obj6_prop">Получить свойство:</label>
+    <input type="text" id="obj6_prop" value="name" style="width:120px"/>
     <button onclick="obj6()">Выполнить</button>
     <div>Результат: <span id="obj6_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 7</h2>
+    <div class="desc">Сравнение двух объектов по значению их свойств (например, по возрасту).</div>
+    <label for="obj7_name1">Имя 1:</label>
+    <input type="text" id="obj7_name1" value="Антон" style="width:120px"/>
+    <label for="obj7_age1">Возраст 1:</label>
+    <input type="number" id="obj7_age1" value="19"/>
+    <label for="obj7_name2">Имя 2:</label>
+    <input type="text" id="obj7_name2" value="Рома" style="width:120px"/>
+    <label for="obj7_age2">Возраст 2:</label>
+    <input type="number" id="obj7_age2" value="40"/>
     <button onclick="obj7()">Выполнить</button>
     <div>Результат: <span id="obj7_result"></span></div>
 </div>
 
 <div class="task">
     <h2>Задача 8</h2>
+    <div class="desc">Итерация по свойствам объекта (for...in).</div>
+    <label for="obj8_name">Имя:</label>
+    <input type="text" id="obj8_name" value="Антон" style="width:120px"/>
+    <label for="obj8_age">Возраст:</label>
+    <input type="number" id="obj8_age" value="19"/>
     <button onclick="obj8()">Выполнить</button>
     <div>Результат: <pre class="result-multi-line" id="obj8_result"></pre></div>
 </div>

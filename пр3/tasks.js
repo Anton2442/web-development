@@ -1,8 +1,10 @@
+// Блок 1
 // 1
 function task1() {
     document.getElementById("header").textContent = "Заголовок изменён!";
 }
 
+window.addEventListener('load', function() {
 // 2
 let box = document.querySelector(".box");
 box.addEventListener('mouseover', function(event) {
@@ -22,9 +24,208 @@ inputField.addEventListener('change', function(event) {
     let change = inputField.value.length - prevInput.length;
     output.textContent = change>=0?`Добавлено символов: ${change}`:`Удалено символов: ${-change}`;
     prevInput = inputField.value;
-})
+});
 
 // 4
 document.getElementById("backgroundBox").addEventListener('dblclick', function(event) {
     event.target.style.backgroundColor = "green";
-})
+});
+
+// 5
+let submitButton = document.getElementById("submitButton");
+let agreeCheckbox = document.getElementById("agreeCheckbox");
+agreeCheckbox.addEventListener('change', function(event) {
+    submitButton.disabled = !event.target.checked;
+});
+
+// 6
+let windowSize = document.getElementById("windowSize");
+windowSize.textContent = `Ширина: ${window.innerWidth}px, Высота: ${window.innerHeight}px`;
+window.addEventListener('resize', function(event) {
+    windowSize.textContent = `Ширина: ${window.innerWidth}px, Высота: ${window.innerHeight}px`;
+});
+
+// 7
+let link = document.getElementById("link");
+link.addEventListener('mouseover', function(event) {
+    event.target.textContent = "Вы навели мышь";
+});
+link.addEventListener('mouseout', function(event) {
+    event.target.textContent = "Это ссылка";
+});
+
+// 8
+let textField = document.getElementById("textField");
+textField.addEventListener('input', function(event) {
+    if (event.target.value.length > 10) {
+        event.target.value = event.target.value.slice(0, 10);
+    }
+});
+
+// 9
+let hideMe = document.getElementById("hideMe");
+hideMe.addEventListener('click', function(event) {
+    event.target.style.display = "none";
+});
+
+// 10
+let toggleButton = document.getElementById("toggleButton");
+let toggleBox = document.getElementById("toggleBox");
+toggleButton.addEventListener('click', function(event) {
+    toggleBox.classList.toggle("active");
+    toggleBox.classList.toggle("inactive");
+});
+
+// Блок 2
+// 1
+let button1 = document.createElement("button");
+button1.textContent = "Нажми меня";
+document.getElementById("task2_1").insertAdjacentElement("afterend", button1);
+
+// 2
+let example = document.getElementById("example");
+example.classList.add("highlight");
+
+// 3
+let button = document.getElementById("button");
+button.classList.remove("active");
+
+// 4
+let box1 = document.querySelector(".box1");
+box1.style.width = "100px";
+box1.style.height = "100px";
+box1.style.backgroundColor = "red";
+box1.textContent = "box1";
+
+// 5
+let header = document.getElementById("header1");
+header.textContent = "Добро пожаловать!";
+
+// 6
+let myButton = document.getElementById("myButton");
+myButton.addEventListener('click', function(event) {
+    console.log("Кнопка нажата");
+});
+
+// 7
+let myList = document.getElementById("myList");
+let newItem = document.createElement("li");
+newItem.textContent = "Новый элемент";
+myList.appendChild(newItem);
+
+// 8
+let deleteMe = document.getElementById("deleteMe");
+deleteMe.remove();
+
+});
+
+// 9
+let link1 = document.getElementById("link1");
+link1.href = "https://www.example.com";
+
+// 10
+let highlight = document.querySelectorAll(".highlight");
+highlight.forEach(function(item) {
+    item.style.color = "blue";
+});
+
+// Блок 3
+// 1
+let arr = ["item1", "item2", "item3"];
+let items = document.querySelectorAll(".item");
+items.forEach(function(item, index) {
+    item.textContent = arr[index];
+});
+
+// 2
+let products = [
+    { name: "Товар 1", price: 100 },
+    { name: "Товар 2", price: 200 },
+    { name: "Товар 3", price: 300 }
+];
+let productList = document.getElementById("productList");
+products.forEach(function(product) {
+    let li = document.createElement("li");
+    li.textContent = product.name + " - " + product.price;
+    productList.appendChild(li);
+});
+
+// 3
+let arr1 = ["element1", "element2", "element3", "element4"];
+arr1.forEach(function(element) {
+    document.getElementById(element).classList.add("highlight");
+});
+
+// 4
+let tableContainer = document.getElementById("tableContainer");
+let table = document.createElement("table");
+tableContainer.appendChild(table);
+let arr2 = [
+    { name: "John", age: 25, city: "New York" },
+    { name: "Jane", age: 30, city: "Los Angeles" },
+    { name: "Jim", age: 35, city: "Chicago" }
+];
+arr2.forEach(function(obj) {
+    let row = document.createElement("tr");
+    Object.values(obj).forEach(function(value) {
+        let cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+    });
+    table.appendChild(row);
+});
+
+// 5
+let arr3 = [
+    { id: "element5", style: { backgroundColor: "#ffe5e5", border: "1px solid #ff8a8a", padding: "4px" } },
+    { id: "element6", style: { backgroundColor: "#e5ffe9", border: "1px solid #6bdc7d", padding: "4px" } },
+    { id: "element7", style: { backgroundColor: "#e8f1ff", border: "1px solid #79a9ff", padding: "4px" } },
+    { id: "element8", style: { backgroundColor: "#fff7d6", border: "1px solid #ffd76a", padding: "4px" } }
+];
+arr3.forEach(function(obj) {
+    let el = document.getElementById(obj.id);
+    if (!el) return;
+    Object.keys(obj.style).forEach(function(prop) {
+        el.style[prop] = obj.style[prop];
+    });
+});
+
+// Блок 4
+// 1 Создайте галерею из изображений на основе массива объектов. При клике на любое изображение оно должно увеличиваться, а остальные — уменьшаться. В каждой строке галереи должно быть не более 3 изображений.
+let gallery = document.getElementById("gallery");
+let images = [
+    { id: "image1", src: "images/image1.jpg" },
+    { id: "image2", src: "images/image2.jpg" },
+    { id: "image3", src: "images/image3.jpg" },
+    { id: "image4", src: "images/image4.jpg" },
+    { id: "image5", src: "images/image5.jpg" },
+    { id: "image6", src: "images/image6.jpg" },
+];
+gallery.style.display = "grid";
+gallery.style.gridTemplateColumns = "repeat(3, 1fr)";
+gallery.style.gap = "8px";
+images.forEach(function(obj) {
+    let image = document.createElement("img");
+    image.src = obj.src;
+    image.id = obj.id;
+    image.style.width = "100%";
+    image.style.height = "120px";
+    image.style.objectFit = "cover";
+    image.style.cursor = "pointer";
+    if (gallery) gallery.appendChild(image);
+    image.addEventListener("click", function() {
+        // shrink all
+        let all = gallery ? gallery.querySelectorAll("img") : [];
+        all.forEach(function(img) {
+            img.style.gridColumn = "auto";
+            img.style.height = "120px";
+            img.style.transform = "scale(1)";
+            img.style.zIndex = "0";
+        });
+        // enlarge clicked
+        image.style.gridColumn = "1 / span 3";
+        image.style.height = "360px";
+        image.style.transform = "scale(1.02)";
+        image.style.zIndex = "1";
+    });
+});

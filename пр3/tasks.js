@@ -191,26 +191,28 @@ arr3.forEach(function(obj) {
 });
 
 // Блок 4
-// 1 Создайте галерею из изображений на основе массива объектов. При клике на любое изображение оно должно увеличиваться, а остальные — уменьшаться. В каждой строке галереи должно быть не более 3 изображений.
+// 1
 let gallery = document.getElementById("gallery");
 let images = [
-    { id: "image1", src: "images/image1.jpg" },
-    { id: "image2", src: "images/image2.jpg" },
-    { id: "image3", src: "images/image3.jpg" },
-    { id: "image4", src: "images/image4.jpg" },
-    { id: "image5", src: "images/image5.jpg" },
-    { id: "image6", src: "images/image6.jpg" },
+    { id: "image1", src: "assets/images/image.jpg" },
+    { id: "image2", src: "assets/images/image.jpg" },
+    { id: "image3", src: "assets/images/image.jpg" },
+    { id: "image4", src: "assets/images/image.jpg" },
+    { id: "image5", src: "assets/images/image.jpg" },
+    { id: "image6", src: "assets/images/image.jpg" },
 ];
 gallery.style.display = "grid";
-gallery.style.gridTemplateColumns = "repeat(3, 1fr)";
+gallery.style.gridTemplateColumns = "repeat(6, 1fr)";
+gallery.style.gridTemplateRows = "repeat(4, 1fr)";
 gallery.style.gap = "8px";
-images.forEach(function(obj) {
+gallery.style.margin = "50px";
+images.forEach(function(obj, index) {
     let image = document.createElement("img");
     image.src = obj.src;
     image.id = obj.id;
+    image.style.gridRow = `${Math.floor((index+1)/3)*2}/${Math.floor(index/3+1)*2+1}`;
+    // image.style.gridColumn = `${index*2+1} / ${index*2+1+2}`;
     image.style.width = "100%";
-    image.style.height = "120px";
-    image.style.objectFit = "cover";
     image.style.cursor = "pointer";
     if (gallery) gallery.appendChild(image);
     image.addEventListener("click", function() {
@@ -218,14 +220,13 @@ images.forEach(function(obj) {
         let all = gallery ? gallery.querySelectorAll("img") : [];
         all.forEach(function(img) {
             img.style.gridColumn = "auto";
-            img.style.height = "120px";
-            img.style.transform = "scale(1)";
+            img.style.transform = "scale(0.7)";
             img.style.zIndex = "0";
         });
         // enlarge clicked
-        image.style.gridColumn = "1 / span 3";
-        image.style.height = "360px";
-        image.style.transform = "scale(1.02)";
+        // image.style.gridColumn = "1 / span 3";
+        // image.style.height = "360px";
+        image.style.transform = "scale(1.3)";
         image.style.zIndex = "1";
     });
 });

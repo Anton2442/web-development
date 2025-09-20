@@ -201,32 +201,98 @@ let images = [
     { id: "image5", src: "assets/images/image.jpg" },
     { id: "image6", src: "assets/images/image.jpg" },
 ];
-gallery.style.display = "grid";
-gallery.style.gridTemplateColumns = "repeat(6, 1fr)";
-gallery.style.gridTemplateRows = "repeat(4, 1fr)";
-gallery.style.gap = "8px";
-gallery.style.margin = "50px";
-images.forEach(function(obj, index) {
-    let image = document.createElement("img");
-    image.src = obj.src;
-    image.id = obj.id;
-    image.style.gridRow = `${Math.floor((index+1)/3)*2}/${Math.floor(index/3+1)*2+1}`;
-    // image.style.gridColumn = `${index*2+1} / ${index*2+1+2}`;
-    image.style.width = "100%";
-    image.style.cursor = "pointer";
-    if (gallery) gallery.appendChild(image);
-    image.addEventListener("click", function() {
-        // shrink all
-        let all = gallery ? gallery.querySelectorAll("img") : [];
-        all.forEach(function(img) {
-            img.style.gridColumn = "auto";
-            img.style.transform = "scale(0.7)";
-            img.style.zIndex = "0";
-        });
-        // enlarge clicked
-        // image.style.gridColumn = "1 / span 3";
-        // image.style.height = "360px";
-        image.style.transform = "scale(1.3)";
-        image.style.zIndex = "1";
+images.forEach(function(obj) {
+    let img = document.createElement("img");
+    img.src = obj.src;
+    img.id = obj.id;
+    gallery.appendChild(img);
+
+    img.addEventListener("click", function() {
+    let all = gallery.querySelectorAll("img");
+    all.forEach(function(el) {
+        el.classList.remove("active");
+        el.classList.add("small");
+    });
+    img.classList.remove("small");
+    img.classList.add("active");
     });
 });
+
+// 2
+let form = document.getElementById("userForm");
+let table1 = document.getElementById("userTable");
+
+if (form) {
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let nameInput = document.getElementById("name");
+    let ageInput = document.getElementById("age");
+
+    let name = nameInput.value.trim();
+    let age = parseInt(ageInput.value);
+
+    ageInput.classList.remove("error");
+
+    if (age < 18) {
+      ageInput.classList.add("error");
+      return;
+    }
+
+    let row = document.createElement("tr");
+
+    let nameCell = document.createElement("td");
+    nameCell.textContent = name;
+    let ageCell = document.createElement("td");
+    ageCell.textContent = age;
+
+    row.appendChild(nameCell);
+    row.appendChild(ageCell);
+
+    table1.appendChild(row);
+
+    form.reset();
+  });
+}
+
+// 3
+let products1 = [
+    { name: "Телефон", price: 15000 },
+    { name: "Ноутбук", price: 55000 },
+    { name: "Наушники", price: 3000 },
+    { name: "Монитор", price: 20000 },
+    { name: "Клавиатура", price: 2500 }
+  ];
+  
+  let table2 = document.getElementById("productTable");
+  let input = document.getElementById("minPrice");
+  
+  for (let i = 0; i < products1.length; i++) {
+    let row = document.createElement("tr");
+  
+    let nameCell = document.createElement("td");
+    nameCell.textContent = products1[i].name;
+  
+    let priceCell = document.createElement("td");
+    priceCell.textContent = products1[i].price;
+  
+    row.appendChild(nameCell);
+    row.appendChild(priceCell);
+  
+    table2.appendChild(row);
+  }
+  
+  input.addEventListener("input", function() {
+    let value = input.value;
+    let rows = table2.getElementsByTagName("tr");
+  
+    for (let i = 1; i < rows.length; i++) {
+      let price = products1[i - 1].price;
+  
+      if (value === "" || price > parseInt(value)) {
+        rows[i].style.display = "";
+      } else {
+        rows[i].style.display = "none";
+      }
+    }
+  });

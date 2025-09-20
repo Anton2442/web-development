@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практическая 3</title>
+    <style>
+        #gallery {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+          max-width: 800px;
+          margin: 30px 60px;
+        }
+        #gallery img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+        #gallery img.small {
+          transform: scale(0.8);
+        }
+        #gallery img.active {
+          transform: scale(1.2);
+          z-index: 1;
+        }
+        #age.error {
+          border: 2px solid red;
+          background: #ffe5e5;
+        }
+      </style>
 </head>
 <body>
     <h1>Блок 1</h1>
@@ -130,6 +157,29 @@
     <div id="gallery"></div>
     <hr>
 
+    <h2>Задание 2</h2>
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Имя" required>
+      <input type="number" id="age" placeholder="Возраст" required>
+      <button type="submit">Добавить</button>
+    </form>
+
+    <table id="userTable" border="1">
+      <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+      </tr>
+    </table>
+    <hr>
+
+    <h2>Задание 3</h2>
+    <input type="number" id="minPrice" placeholder="Минимальная цена">
+    <table style="margin-bottom: 30px;" id="productTable" border="1">
+      <tr>
+        <th>Название</th>
+        <th>Цена</th>
+      </tr>
+    </table>
 </body>
     <script src="tasks.js"></script>
 </html>

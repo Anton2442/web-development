@@ -46,6 +46,41 @@ section {
   color: #3E356A;
 }
 
+.burgerMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 55vw;
+  background-color: #220E43;
+  height: 100vh;
+}
+
+#menuCloseButton {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 70px;
+  left: 100px;
+}
+
+.burgerMenu__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+  margin-top: 30vh;
+}
+
+.menu__element {
+  list-style: none;
+  font-size: 15px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
 .section__card {
   height: 535px;
   background-color: #D2CFE4;
@@ -82,9 +117,6 @@ section {
 .content__info {
   align-items: center;
   margin-top: 110px;
-}
-
-.info__header {
 }
 
 .info__text {

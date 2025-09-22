@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <header>
-  <img id="menuIcon" src="assets/images/Menu.svg">
+  <img id="menuButton" src="assets/images/Menu.svg">
   <img class="logo" src="assets/images/Logo.svg" alt="Logo">
   <nav class="nav">
     <ol class="nav__list">
@@ -25,7 +25,7 @@
   </div>
 </header>
 
-<div class="burgerMenu">
+<div id="burgerMenu" class="burgerMenu">
   <img id="menuCloseButton" src="assets/images/CloseWhite.svg">
   <ol class="burgerMenu__menu">
     <li class="menu__element"><img src="assets/images/LogoWhite.svg"></li>
@@ -34,6 +34,13 @@
     <li class="menu__element">ABOUT</li>
     <li class="menu__element">SUPPORT</li>
   </ol>
+</div>
+
+<div id="subscribeSection" class="subscribeSection">
+  <div class="subscribeSection__rect">
+    <h1 class="rect__header">Вы подписаны</h1>
+    <p class="rect__text"></p>
+  </div>
 </div>
 
 <main>
@@ -66,8 +73,8 @@
           <p class="info__text">Sign up for texts to be notified about our
             best offers on the perfect gifts.</p>
           <div class="info__email">
-            <input type="email" class="email__input" placeholder="Your email">
-            <button class="email__button">Sign up</button>
+            <input type="email" id="emailInput" class="email__input" placeholder="Your email">
+            <button id="signUpButton" class="email__button">Sign up</button>
           </div>
 
         </div>

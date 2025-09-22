@@ -9,6 +9,7 @@ header {
 
 #menuButton {
   display: none;
+  cursor: pointer;
 }
 
 h1 {
@@ -402,6 +403,7 @@ section {
   border-radius: 200px;
   width: fit-content;
   padding: 12px 22px;
+  cursor: pointer;
 }
 
 .info__email {

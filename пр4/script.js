@@ -29,3 +29,11 @@ subscribeSection.addEventListener('click', function(event) {
   subscribeSection.classList.remove("subscribeSection--shown");
 });
 
+let tags = document.querySelectorAll(".tags__tag");
+let searchLine = document.querySelector(".search__input");
+tags.forEach(tag => {
+  tag.addEventListener('click', function(event) {
+    searchLine.value = tag.textContent;
+  });
+});
+

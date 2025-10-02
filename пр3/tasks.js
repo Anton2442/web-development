@@ -184,7 +184,6 @@ let arr3 = [
 ];
 arr3.forEach(function(obj) {
     let el = document.getElementById(obj.id);
-    if (!el) return;
     Object.keys(obj.style).forEach(function(prop) {
         el.style[prop] = obj.style[prop];
     });

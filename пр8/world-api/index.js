@@ -9,7 +9,7 @@ app.use(express.json()); // для поддержки JSON
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '', // замените на ваш пароль
+    password: '',
     database: 'world'
 });
 

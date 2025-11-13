@@ -20,7 +20,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'world'
+    database: 'user'
 });
 
 db.connect(err => {
@@ -44,7 +44,7 @@ app.post('/register', upload.single('profile_image'), async (req, res) => {
 
     try {
         const hashedPassword = await bcrypt.hash(password_user, 10);
-        const query = 'INSERT INTO пользователь (name_user, login_user, password_user, id_status, id_project, link_img_user) VALUES (?, ?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO user (name_user, login_user, password_user, id_status, id_project, link_img_user) VALUES (?, ?, ?, ?, ?, ?)';
         db.query(query, [name_user, login_user, hashedPassword, id_status, id_project, link_img_user], (err, results) => {
             if (err) return res.status(500).send(err);
             res.status(201).send("Пользователь зарегистрирован");
@@ -57,7 +57,7 @@ app.post('/register', upload.single('profile_image'), async (req, res) => {
 // Авторизация пользователя
 app.post('/login', (req, res) => {
     const { login_user, password_user } = req.body;
-    const query = 'SELECT * FROM пользователь WHERE login_user = ?';
+    const query = 'SELECT * FROM user WHERE login_user = ?';
     
     db.query(query, [login_user], async (err, results) => {
         if (err) return res.status(500).send(err);
@@ -71,17 +71,42 @@ app.post('/login', (req, res) => {
         }
 
         const token = generateToken(user.id_user);
-        db.query('UPDATE пользователь SET token_user = ? WHERE id_user = ?', [token, user.id_user]);
+        db.query('UPDATE user SET token_user = ? WHERE id_user = ?', [token, user.id_user]);
         res.json({ token });
     });
 });
 
 // Удаление пользователя
+app.delete('/users/', (req, res) => {
+    const { id } = req.params;
+    const token = req.headers['authorization'];
+
+    if (!token) {
+        return res.status(401).send("Токен не предоставлен");
+    }
+
+    const query = 'DELETE FROM user WHERE id_user = ?';
+
+    jwt.verify(token, 'secretKey', (err, user) => {
+        if (err) {
+            return res.status(403).send("Недействительный токен");
+        }
+
+        const query = 'DELETE FROM user WHERE id_user = ?';
+        db.query(query, [user.id_user], (err, results) => {
+            if (err) return res.status(500).send(err);
+            if (results.affectedRows === 0) {
+                return res.status(404).send("Пользователь не найден");
+            }
+            res.send("Пользователь удалён");
+        });
+    });
+});
 
 // Просмотр информации конкретного пользователя
 app.get('/users/:id', (req, res) => {
     const { id } = req.params;
-    const query = 'SELECT * FROM пользователь WHERE id_user = ?';
+    const query = 'SELECT * FROM user WHERE id_user = ?';
 
     db.query(query, [id], (err, results) => {
         if (err) return res.status(500).send(err);
@@ -91,7 +116,15 @@ app.get('/users/:id', (req, res) => {
 });
 
 // Просмотр всех пользователей
+app.get('/users', (req, res) => {
+    const query = 'SELECT * FROM user';
 
+    db.query(query, (err, results) => {
+        if (err) return res.status(500).send(err);
+        if (results.length === 0) return res.status(404).send("Пользователей не найдено");
+        res.json(results);
+    });
+});
 
 // Запуск сервера
 app.listen(port, () => {

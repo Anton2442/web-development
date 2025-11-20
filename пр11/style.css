@@ -1,0 +1,33 @@
+body {
+    background-size: cover;
+    background-position: right center;
+    height: 100vh;
+    background-attachment: fixed;
+    background-image: url("https://avatars.mds.yandex.net/i?id=eb582ef9885a0c2e135c11cc50e257c0_l-8505782-images-thumbs&n=13");
+}
+
+#characters-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: center;
+}
+
+.card {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+    background-color: darkgrey;
+    opacity: 0.9;
+    margin: 10px;
+    border-radius: 16px;
+    color: black;
+}
+
+.card img {
+    width: 200px;
+}

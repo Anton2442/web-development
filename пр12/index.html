@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header__content wrap">
+                <img src="./src/Logo.svg" alt="logo">
+                <nav>
+                    <ul class="nav__list">
+                        <li class="nav__item-list">Start</li>
+                        <li class="nav__item-list">Services</li>
+                        <li class="nav__item-list">About</li>
+                        <li class="nav__item-list">News</li>
+                        <li class="nav__item-list">Contact</li>
+                    </ul>
+                    <a href="#" class="menu-btn">
+                        <span></span>
+                    </a>
+                    
+                    <ul class="nav__list_mob">
+                        <a href="#" class="header__logo"><img src="./src/Logo.svg" alt="logo"></a>
+                        <li class="nav-list__item_mob"><a class="item__link_mob" href="#services">Услуги</a></li>
+                        <li class="nav-list__item_mob"><a class="item__link_mob" href="#about">О нас</a></li>
+                        <li class="nav-list__item_mob"><a class="item__link_mob" href="#equipment">Техника</a></li>
+                        <li class="nav-list__item_mob"><a class="item__link_mob" href="#banners">Партнеры</a></li>
+                        <li class="nav-list__item_mob"><a class="item__link_mob" href="#licen">Лицензия</a></li> 
+                    </ul>
+                    <script>
+                        $('.nav-list__item_mob a').on('click', function(e) {
+                            console.log(1);
+                            
+                            $('.menu-btn').removeClass('menu-btn_active');
+                            $('.nav__list_mob ').removeClass('nav__list_mob_active');
+                            document.body.style.overflowY = 'auto';
+                        });
+    
+                        $('.menu-btn').on('click', function(e) {
+                            console.log(2);
+                            e.preventDefault();
+                            $(this).toggleClass('menu-btn_active');
+                            $('.nav__list_mob').toggleClass('nav__list_mob_active');
+                            document.body.style.overflowY = $(this).hasClass('menu-btn_active') ? 'hidden' : 'auto';
+                        });
+    
+                        
+                    </script>
+                </nav>
+                <a class="nav__phone button button_red" href="tel:384-129-293-39">384-129-293-39</a>
+            </div>
+        </div> 
+    </header>
+    <div class="hero">
+        <div class="hero__content wrap">
+            <div class="hero__info">
+                <h1 class="title title_lg text_black title__hero">For Your Pet’s Natural Life & Care</h1>
+                <p class="desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                    sed do eiusmod tempor incididunt
+                </p>
+                <div class="buttons">
+                    <a href="" class="button button_red">Our Services</a>
+                    <a href="" class="button button_green">Make Appointment</a>
+                </div>
+            </div>
+            <div class="hero__img">
+                <img src="./src/dogHero.png" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    <div class="care">
+        <div class="care__content wrap">
+            <div class="title__care">
+                <p class="desc desc_md text_red">Care For Your Pet</p>
+                <h2 class="title title_md text_black">What We Do</h2>
+            </div>
+            <div class="care__cards">
+                <div class="care__card">
+                    <img src="./src/iconCare1.svg" alt="">
+                    <h4 class="title title_lt text_black">Pet Grooming</h4>
+                    <p class="desc desc_md text_gray" >There are many variatio of passage of Lorem for a Ipsum available</p>
+                </div>
+                <div class="care__card">
+                    <img src="./src/iconCare1.svg" alt="">
+                    <h4 class="title title_lt text_black">Pet Grooming</h4>
+                    <p class="desc desc_md text_gray" >There are many variatio of passage of Lorem for a Ipsum available</p>
+                </div>
+                <div class="care__card">
+                    <img src="./src/iconCare1.svg" alt="">
+                    <h4 class="title title_lt text_black">Pet Grooming</h4>
+                    <p class="desc desc_md text_gray" >There are many variatio of passage of Lorem for a Ipsum available</p>
+                </div>
+                <div class="care__card">
+                    <img src="./src/iconCare1.svg" alt="">
+                    <h4 class="title title_lt text_black">Pet Grooming</h4>
+                    <p class="desc desc_md text_gray" >There are many variatio of passage of Lorem for a Ipsum available</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="success">
+        <div class="success__content wrap">
+            <div class="success__info">
+                <div class="success__title">
+                    <p class="desc desc_sm text_red">Our Success Story</p>
+                    <h2 class="title title_md text_black">
+                        Experience Vet Clinic<br /> And Services
+                    </h2>
+                </div>
+                <p class="desc desc_md text_black">Aliquam erat volutpat In id fermentum augue, ut pellentesque  Maecenas at arcu risus. Donec commodo sodales ex, scelerisque laoreet nibh hakso hendrerit id. In aliquet magna nec lobortis maximus.</p>
+                <ul class="success__list-item">
+                    <li class="success__item">Donec commodo scelerisque laoreet nibh hendrerit</li>
+                    <li class="success__item">In aliquet magna nec lobortis maximus. Etiam a dolor placerat</li>
+                    <li class="success__item">Etiam dolor nec elementum ipsum convall Maecenas</li>
+                </ul>
+                <a href="" class="button button_red">Know More About Us</a>
+            </div>
+            <img src="./src/StoryDog.png" alt="">
+        </div>
+    </div>
+    <div class="team">
+        <div class="team__content wrap">
+            <div class="title__team">
+                <p class="desc desc_sm text_red">Our Team</p>
+                <h2 class="title title_md text_black">
+                    Meet Our Groomers
+                </h2>
+            </div>
+            <div class="team__cards">
+                <div class="team__card">
+                    <img src="./src/team1.png" alt="">
+                    <h3 class="title title_lt text_black">Rosalina Wiliam</h3>
+                    <p class="desc desc_sm text_red">CEO & Founder</p>
+                </div>
+                <div class="team__card">
+                    <img src="./src/team1.png" alt="">
+                    <h3 class="title title_lt text_black">Rosalina Wiliam</h3>
+                    <p class="desc desc_sm text_red">CEO & Founder</p>
+                </div>
+                <div class="team__card">
+                    <img src="./src/team1.png" alt="">
+                    <h3 class="title title_lt text_black">Rosalina Wiliam</h3>
+                    <p class="desc desc_sm text_red">CEO & Founder</p>
+                </div>
+                <div class="team__card">
+                    <img src="./src/team1.png" alt="">
+                    <h3 class="title title_lt text_black">Rosalina Wiliam</h3>
+                    <p class="desc desc_sm text_red">CEO & Founder</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service">
+        <div class="service__content wrap">
+            <div class="service__card service__card_left">
+                <h3 class="title title_lt text_black">Regular Pack</h3>
+                <h2 class="title title_md text_black">3 Days</h2>
+                <ul class="service__list-items">
+                    <li class="service__item">Pet Shower</li>
+                    <li class="service__item">Fitness Checkup</li>
+                    <li class="service__item">Pet Grooming</li>
+                    <li class="service__item">Hair and Nail Cut</li>
+                    <li class="service__item">Control Hair Falling</li>
+                </ul>
+                <h3 class="title title_lt text_red service__price">$150Per Visit</h3>
+                <a class="button button_red" href="">Purchase Pack</a>
+            </div>
+            <div class="service__card service__card_main text_while ">
+                <h3 class="title title_lt">Exclusive Pack</h3>
+                <h2 class="title title_md">10 Days</h2>
+                <ul class="service__list-items">
+                    <li class="service__item">Pet Shower</li>
+                    <li class="service__item">Fitness Checkup</li>
+                    <li class="service__item">Pet Grooming</li>
+                    <li class="service__item">Hair and Nail Cut</li>
+                    <li class="service__item">Control Hair Falling</li>
+                    <li class="service__item">Brush & Blow Dry</li>
+                    <li class="service__item">Pet Park And Games</li>
+                </ul>
+                <h3 class="title title_lt text_while service__price">$350Per Visit</h3>
+                <a class="button button_while" href="">Purchase Pack</a>
+            </div>
+            <div class=" service__card service__card_right">
+                <h3 class="title title_lt text_black">Premium Pack</h3>
+                <h2 class="title title_md text_black">30 Days</h2>
+                <ul class="service__list-items">
+                    <li class="service__item">Pet Shower</li>
+                    <li class="service__item">Fitness Checkup</li>
+                    <li class="service__item">Pet Grooming</li>
+                    <li class="service__item">Hair and Nail Cut</li>
+                    <li class="service__item">Control Hair Falling</li>
+                </ul>
+                <h3 class="title title_lt text_red service__price">$550Per Visit</h3>
+                <a class="button button_red" href="">Purchase Pack</a>
+            </div>
+        </div>
+    </div>
+    <div class="professional">
+        <div class="professional__content wrap">
+            <div class="professional__info">
+                <h3 class="title title_md text_black">Professional Pet Care</h3>
+                <p class="desc desc_lg text_gray">
+                    Pet owners trust us to look after the needs of their beloved companions. We are specialists committed to delivering the very highest of veterinary care and affection.
+                </p>
+                <a class="button button_red" href="">Contact Us Now</a>
+            </div>
+            <img src="./src/PrDog.png" alt="">
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer__content wrap">
+                <div class="footer__info">
+                    <img src="./src/logoFooter.svg" alt="" class="logo">
+                    <p class="desc desc_lg text_gray">
+                        Quisque id leo non dolor tempor elementum quis ac urna. Nam pharetra, ligula eget finibus dignissim, turpis ipsum sollicitudin
+                    </p>
+                    <div class="form">
+                        <input class="form__input-text" type="email" name="" id="">
+                        <input class="button button_red " type="submit" value="Subscribe">
+                    </div>
+                </div>
+                <div class="footer__address">
+                    <h4 class="title title_lt text_black">Address</h4>
+                    <p class="desc desc_lg text_gray ">+23 384 485 29</p>
+                    <p class="desc desc_lg text_gray">vet@shamim.com</p>
+                    <p class="desc desc_lg text_gray">
+                        123 king street, Melbrown <br />
+                        Victoria 3000, Australia
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <h3 class="title title_lt text_black" >Links</h3>
+                    <p class="desc desc_lg text_gray">About Us</p>
+                    <p class="desc desc_lg text_gray">Groomers</p>
+                    <p class="desc desc_lg text_gray">Contact Us</p>
+                    <p class="desc desc_lg text_gray">Privacy Policy</p>
+                    <p class="desc desc_lg text_gray">Tearms</p>
+                </div>
+                <div class="footer__work">
+                    <h3 class="title title_lt text_black" >Opening Hours</h3>
+                    <p class="desc desc_lg text_gray">Monday-Tuesday 09:00-18:00</p>
+                    <p class="desc desc_lg text_gray">Wednesday 09:00-18:00</p>
+                    <p class="desc desc_lg text_gray">Thrusday-Friday 09:00-18:00</p>
+                    <p class="desc desc_lg text_gray">Saturday 10:00-17:00</p>
+                    <p class="desc desc_lg text_gray">Sunday 10:30-16:00</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copiryte">
+        <div class="coopiryte__content wrap">
+            <p class="desc text_gray desc_md">© Copyright 2021 - 2024 | Pet Theme by Md Shamim Hossain | All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>

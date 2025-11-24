@@ -1,0 +1,51 @@
+.team{
+    padding-top: 50px;
+    margin-bottom: 130px;
+}
+.team__content{
+    background: #FFECE4;
+    border-radius: 50px;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+.title__team{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.team__cards{
+    display: flex;
+    gap: 31px;
+}
+
+.team__card{
+    width: 250px;
+    height: 405px;
+    border-radius: 146px;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.team__card>img{
+    margin-bottom: 30px;
+}
+
+.team__card>img{
+    width: 100%;
+}
+
+@media (max-width:1200px) {
+    .team__cards{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width:509px){
+    .team__content{
+        padding: 100px 20px 100px 20px;
+    }
+}

@@ -1,0 +1,64 @@
+.success__info{
+    text-align: left;
+    width: 630px;
+}
+
+.success__list-item>.success__item{
+    list-style-image:url("../src/ListSuccess.png") ;
+}
+
+.success__title>.title{
+    margin-bottom: 30px;
+}
+
+.success__title>.desc{
+    margin-bottom: 25px;
+}
+
+.success__list-item>.success__item:not(:last-child){
+    margin-bottom: 25px;
+}
+
+.success__list-item{
+    margin-bottom: 46px;
+}
+
+.success__content{
+    display: flex;
+}
+
+.success__content>img{
+    width: 600px;
+}
+
+@media (max-width:1168px) {
+    .success__info {
+        width: 40%;
+    }
+    
+    .success__content img{
+        width: 60%;
+    }
+    .success__content{
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (max-width:947px) {
+    .success__content{
+        flex-direction: column-reverse;
+    }
+    .success__info {
+        width: 100%;
+    }
+    .success__content img{
+        width: 80%;
+    }   
+}
+
+@media (max-width:560px) {
+    .success__content img{
+        width: 100%;
+    }
+}

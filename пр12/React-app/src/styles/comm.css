@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Syne+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Quicksand&family=Syne+Mono&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width: 80%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.button{
+    border-radius: 30px;
+    color: #fff;
+    padding: 17px 35px;
+    text-decoration: none;
+}
+
+.button_red{
+    background: linear-gradient(180deg, #FFA992 0%, #FF7852 65%);
+    box-shadow: 0px 10px 25px 0px #FF7C544D;
+}
+
+.button_green{
+    background: linear-gradient(180deg, #C3E48F 0%, #8EC637 65%);
+    box-shadow: 0px 10px 25px 0px #7DB5234D;
+}
+
+.button_while{
+    background: #FFFFFF;
+    box-shadow: 0px 10px 25px 0px #FF7C544D;
+    color:#FF7751;
+    ;
+}
+
+.title{
+    font-family: 'Nunito';
+    font-weight: 800;
+}
+
+.title_sm{
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.title_lt{
+    font-size: 21px;
+    line-height: 33px;
+}
+
+.title_md{
+    font-size: 50px;
+    line-height: 87px;
+}
+
+.title_lg{
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 95px;
+}
+
+.text_black{
+    color: #242851;
+}
+
+.text_red{
+    color: #FF7751;
+}
+
+.text_gray{
+    color: #707283;
+}
+
+.text_while{
+    color: #fff;
+}
+
+
+.desc, li, a{
+    font-family: 'Quicksand';
+    font-weight: 400;
+}
+
+.desc_lg{
+    font-size: 18px;
+    line-height: 34px;
+}
+
+.desc_md{
+    font-size: 16px;
+    line-height: 30px;    
+}
+

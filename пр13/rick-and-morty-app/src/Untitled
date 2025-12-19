@@ -1,0 +1,17 @@
+.card {
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  padding: 20px;
+  background-color: darkgrey;
+  opacity: 0.9;
+  margin: 10px;
+  border-radius: 16px;
+  color: black;
+}
+
+.card img {
+  width: 200px;
+}

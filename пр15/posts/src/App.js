@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useMemo, useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
@@ -7,8 +8,9 @@ import PostsPage from './components/PostsPage';
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
 
-function App() {
-  const [page, setPage] = useState('login');
+function AppContent() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [posts, setPosts] = useState([]);
   const [loadingAuth, setLoadingAuth] = useState(false);
@@ -29,10 +31,14 @@ function App() {
 
   useEffect(() => {
     if (token) {
-      setPage('posts');
+      if (location.pathname === '/login' || location.pathname === '/register') {
+        navigate('/posts');
+      }
       fetchPosts();
+    } else if (location.pathname === '/posts') {
+      navigate('/login');
     }
-  }, [token]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [token, location.pathname]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const fetchPosts = async () => {
     setLoadingPosts(true);
@@ -52,7 +58,7 @@ function App() {
       const { data } = await api.post('/login', { email, password });
       setToken(data.token);
       localStorage.setItem('token', data.token);
-      setPage('posts');
+      navigate('/posts');
       await fetchPosts();
     } finally {
       setLoadingAuth(false);
@@ -76,7 +82,7 @@ function App() {
   const handleLogout = () => {
     setToken('');
     localStorage.removeItem('token');
-    setPage('login');
+    navigate('/login');
     setPosts([]);
   };
 
@@ -92,35 +98,58 @@ function App() {
           ) : (
             <button
               className="header-button"
-              onClick={() => setPage(page === 'login' ? 'register' : 'login')}
+              onClick={() => navigate(location.pathname === '/login' ? '/register' : '/login')}
             >
-              {page === 'login' ? 'Регистрация' : 'Войти'}
+              {location.pathname === '/login' ? 'Регистрация' : 'Войти'}
             </button>
           )}
         </div>
       </header>
 
       <div className="content">
-        {page === 'login' && (
-          <LoginPage
-            onLogin={handleLogin}
-            switchToRegister={() => setPage('register')}
-            loading={loadingAuth}
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              <LoginPage
+                onLogin={handleLogin}
+                switchToRegister={() => navigate('/register')}
+                loading={loadingAuth}
+              />
+            }
           />
-        )}
-
-        {page === 'register' && (
-          <RegisterPage
-            onRegister={handleRegister}
-            switchToLogin={() => setPage('login')}
-            loading={loadingAuth}
+          <Route
+            path="/register"
+            element={
+              <RegisterPage
+                onRegister={handleRegister}
+                switchToLogin={() => navigate('/login')}
+                loading={loadingAuth}
+              />
+            }
           />
-        )}
-
-        {page === 'posts' &&
-          (loadingPosts ? <p>Загружаем посты...</p> : <PostsPage posts={posts} />)}
+          <Route
+            path="/posts"
+            element={
+              token ? (
+                loadingPosts ? <p>Загружаем посты...</p> : <PostsPage posts={posts} />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+          <Route path="/" element={<Navigate to="/login" replace />} />
+        </Routes>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 }
 

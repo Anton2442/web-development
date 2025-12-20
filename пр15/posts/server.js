@@ -7,8 +7,8 @@ const { body, validationResult } = require('express-validator');
 const axios = require('axios');
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3001;
-const JWT_SECRET = process.env.JWT_SECRET || 'dev-secret';
+const PORT = 3001;
+const JWT_SECRET = 'dev-secret';
 
 const db = mysql.createPool({
   host: 'localhost',

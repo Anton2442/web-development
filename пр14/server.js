@@ -17,7 +17,7 @@ const db = mysql.createPool({
 // Healthcheck
 app.get('/', (_req, res) => res.send('API OK'));
 
-const TABLE = 'users';
+const TABLE = 'products';
 
 // GET список товаров
 app.get('/products', (_req, res) => {

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Logo from "./assets/IMAGE.png";
 import productPhoto from "./assets/Telephone.png";
-import "./Users.css";
+import "./Products.css";
 
-function Users() {
+export default function Products() {
   const [users, setUsers] = useState([]);
   const [form, setForm] = useState({ name: "", email: "", age: "" });
   const [editId, setEditId] = useState(null);
@@ -130,5 +130,3 @@ function Users() {
     </>
   );
 }
-
-export default Users;
